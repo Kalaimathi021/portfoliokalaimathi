@@ -1,0 +1,23 @@
+{
+  "overview": "A modern, dark-mode professional portfolio for UI/UX Designer Kalaimathi R. Features animated hero, bento project grid, glassmorphism cards, and smooth scroll animations with an electric blue/purple/cyan accent palette on a deep charcoal background.",
+  "features": [
+    "Animated hero with grid background, gradient glow, and floating UI elements",
+    "Bento grid project showcase with hover animations and case study buttons",
+    "Glassmorphism skills cards for design, tools, and technical skills",
+    "Experience, certifications, and hackathons section",
+    "Responsive contact section with email, LinkedIn, and phone links",
+    "Smooth scroll-triggered animations throughout",
+    "Premium dark-mode typography with strong visual hierarchy"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "ui-ux",
+    "dark-mode",
+    "design",
+    "glassmorphism",
+    "bento-grid",
+    "animations"
+  ],
+  "last_updated": "2026-05-02T08:19:14.877Z"
+}
