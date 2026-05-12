@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from "url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import environment from "vite-plugin-environment";
 
 const ii_url =
   process.env.DFX_NETWORK === "local"
@@ -13,15 +12,20 @@ process.env.STORAGE_GATEWAY_URL =
   process.env.STORAGE_GATEWAY_URL || "https://blob.caffeine.ai";
 
 export default defineConfig({
+  base: "/portfoliokalaimathi/", // ✅ REQUIRED for GitHub Pages
+
   logLevel: "error",
+
   build: {
     emptyOutDir: true,
     sourcemap: false,
     minify: false,
   },
+
   css: {
     postcss: "./postcss.config.js",
   },
+
   optimizeDeps: {
     esbuildOptions: {
       define: {
@@ -29,6 +33,7 @@ export default defineConfig({
       },
     },
   },
+
   server: {
     proxy: {
       "/api": {
@@ -37,13 +42,11 @@ export default defineConfig({
       },
     },
   },
+
   plugins: [
-    environment("all", { prefix: "CANISTER_" }),
-    environment("all", { prefix: "DFX_" }),
-    environment(["II_URL"]),
-    environment(["STORAGE_GATEWAY_URL"]),
     react(),
   ],
+
   resolve: {
     alias: [
       {
@@ -55,6 +58,6 @@ export default defineConfig({
         replacement: fileURLToPath(new URL("./src", import.meta.url)),
       },
     ],
-    dedupe: ["@dfinity/agent"]
+    dedupe: ["@dfinity/agent"],
   },
 });
